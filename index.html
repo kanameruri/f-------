@@ -1,0 +1,1158 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>F-1841220-23 報告書</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+/* Override strong tags inside headings to maintain consistent weight */
+h1 strong,
+h2 strong,
+h3 strong {
+	font-weight: 600;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 10px;
+	padding: 1rem;
+}
+
+/* For default-background callouts, render the border outline. */
+.callout.block-color-default_background {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+/*
+ * Toggles and callouts hold arbitrary content, so they can easily be taller
+ * than a page. They must stay breakable: avoiding breaks inside them makes
+ * Chromium push the whole block onto the next page, which leaves the previous
+ * page mostly empty before every long toggle.
+ */
+details,
+aside {
+	margin: 1.25em 0;
+}
+
+/* Keep a toggle's title on the same page as the start of its content. */
+summary {
+	page-break-after: avoid;
+	break-after: avoid;
+}
+
+/*
+ * Toggle headings render as <h1/h2/h3 style="display:inline-block"> inside
+ * <summary>. Without this reset, the heading's margin-top pushes it below the
+ * ::marker (▼), so the triangle and the title appear on separate lines.
+ */
+summary h1,
+summary h2,
+summary h3,
+summary h4 {
+	margin-top: 0;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+
+	table.collection-content {
+		width: 100%;
+		table-layout: fixed;
+	}
+
+	table.collection-content th,
+	table.collection-content td {
+		overflow-wrap: anywhere;
+	}
+
+	table.collection-content td > .user,
+	table.collection-content td > time {
+		white-space: pre-wrap;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content-wrapper {
+	overflow-x: auto;
+}
+
+@media only print {
+	.collection-content-wrapper {
+		overflow-x: visible;
+	}
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.collection-content td {
+	white-space: pre-wrap;
+	word-break: break-word;
+}
+
+.column-list {
+	display: flex;
+	gap: 46px;
+}
+
+.column {
+	min-width: 0;
+	overflow: hidden;
+}
+
+.column > *:first-child {
+	margin-top: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding-inline: 0.125rem;
+	padding-block: 0.375rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+table {
+	border-collapse: collapse;
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol.numbered-list.numbered-list-digits-2 {
+	padding-inline-start: 2em;
+}
+
+ol.numbered-list.numbered-list-digits-3plus {
+	padding-inline-start: 2.4em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+	margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+/*
+ * Render emoji icons using a ::before pseudo-element to keep the glyph
+ * out of the DOM textContent traversal. This avoids double-rendering icons
+ * in callouts and page titles.
+ * NOTE(slim/html-export-pseudo-icons): I can't tagref this because it will
+ * flag as a duplicate tag after codegen.
+ */
+.icon[data-emoji]::before {
+	content: attr(data-emoji);
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.callout img.notion-static-icon {
+	width: 1em;
+	height: 1em;
+}
+
+.callout p {
+	margin: 0;
+}
+
+.callout h1,
+.callout h2,
+.callout h3 {
+	margin: 0 0 0.6rem;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	margin-right: 0.4em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+blockquote.quote-large {
+	font-size: 1.25em;
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.tab {
+	margin: 1.25em 0;
+	padding-inline: 1rem;
+	border: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(44, 44, 43, 1);
+}
+.highlight-gray {
+	color: rgba(125, 122, 117, 1);
+	fill: rgba(125, 122, 117, 1);
+}
+.highlight-brown {
+	color: rgba(159, 118, 90, 1);
+	fill: rgba(159, 118, 90, 1);
+}
+.highlight-orange {
+	color: rgba(210, 123, 45, 1);
+	fill: rgba(210, 123, 45, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 148, 52, 1);
+	fill: rgba(203, 148, 52, 1);
+}
+.highlight-teal {
+	color: rgba(80, 148, 110, 1);
+	fill: rgba(80, 148, 110, 1);
+}
+.highlight-blue {
+	color: rgba(56, 125, 201, 1);
+	fill: rgba(56, 125, 201, 1);
+}
+.highlight-purple {
+	color: rgba(154, 107, 180, 1);
+	fill: rgba(154, 107, 180, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(207, 81, 72, 1);
+	fill: rgba(207, 81, 72, 1);
+}
+.highlight-default_background {
+	color: rgba(44, 44, 43, 1);
+}
+.highlight-gray_background {
+	background: rgba(42, 28, 0, 0.07);
+}
+.highlight-brown_background {
+	background: rgba(139, 46, 0, 0.086);
+}
+.highlight-orange_background {
+	background: rgba(224, 101, 1, 0.129);
+}
+.highlight-yellow_background {
+	background: rgba(211, 168, 0, 0.137);
+}
+.highlight-teal_background {
+	background: rgba(0, 100, 45, 0.09);
+}
+.highlight-blue_background {
+	background: rgba(0, 124, 215, 0.094);
+}
+.highlight-purple_background {
+	background: rgba(102, 0, 178, 0.078);
+}
+.highlight-pink_background {
+	background: rgba(197, 0, 93, 0.086);
+}
+.highlight-red_background {
+	background: rgba(223, 22, 0, 0.094);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(125, 122, 117, 1);
+	fill: rgba(125, 122, 117, 1);
+}
+.block-color-brown {
+	color: rgba(159, 118, 90, 1);
+	fill: rgba(159, 118, 90, 1);
+}
+.block-color-orange {
+	color: rgba(210, 123, 45, 1);
+	fill: rgba(210, 123, 45, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 148, 52, 1);
+	fill: rgba(203, 148, 52, 1);
+}
+.block-color-teal {
+	color: rgba(80, 148, 110, 1);
+	fill: rgba(80, 148, 110, 1);
+}
+.block-color-blue {
+	color: rgba(56, 125, 201, 1);
+	fill: rgba(56, 125, 201, 1);
+}
+.block-color-purple {
+	color: rgba(154, 107, 180, 1);
+	fill: rgba(154, 107, 180, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(207, 81, 72, 1);
+	fill: rgba(207, 81, 72, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(240, 239, 237, 1);
+}
+.block-color-brown_background {
+	background: rgba(245, 237, 233, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 235, 222, 1);
+}
+.block-color-yellow_background {
+	background: rgba(249, 243, 220, 1);
+}
+.block-color-teal_background {
+	background: rgba(232, 241, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(229, 242, 252, 1);
+}
+.block-color-purple_background {
+	background: rgba(243, 235, 249, 1);
+}
+.block-color-pink_background {
+	background: rgba(250, 233, 241, 1);
+}
+.block-color-red_background {
+	background: rgba(252, 233, 231, 1);
+}
+.select-value-color-default { background-color: rgba(42, 28, 0, 0.07); }
+.select-value-color-gray { background-color: rgba(28, 19, 1, 0.11); }
+.select-value-color-brown { background-color: rgba(127, 51, 0, 0.156); }
+.select-value-color-orange { background-color: rgba(196, 88, 0, 0.203); }
+.select-value-color-yellow { background-color: rgba(209, 156, 0, 0.282); }
+.select-value-color-green { background-color: rgba(0, 96, 38, 0.156); }
+.select-value-color-blue { background-color: rgba(0, 118, 217, 0.203); }
+.select-value-color-purple { background-color: rgba(92, 0, 163, 0.141); }
+.select-value-color-pink { background-color: rgba(183, 0, 78, 0.152); }
+.select-value-color-red { background-color: rgba(206, 24, 0, 0.164); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style><style>@import url('https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/katex-swap.min.css')</style>
+<style>
+/* ===== Classified unlock gate ===== */
+.unlock-gate {
+    margin: 2rem 0 2.5rem;
+    padding: 1.1rem 1.2rem;
+    border: 1px solid rgba(55, 53, 47, 0.16);
+    border-radius: 6px;
+    background: rgba(247, 246, 243, 0.78);
+}
+
+.unlock-gate-title {
+    margin: 0 0 .35rem 0;
+    font-size: .82rem;
+    font-weight: 700;
+    letter-spacing: .12em;
+}
+
+.unlock-gate-note {
+    margin: 0 0 .8rem 0;
+    opacity: .58;
+    font-size: .82rem;
+}
+
+.unlock-row {
+    display: flex;
+    gap: .55rem;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+#access-code {
+    width: 190px;
+    max-width: 100%;
+    height: 38px;
+    padding: 0 .75rem;
+    border: 1px solid rgba(55, 53, 47, 0.28);
+    border-radius: 4px;
+    background: white;
+    color: rgb(55, 53, 47);
+    font: inherit;
+    letter-spacing: .22em;
+    outline: none;
+}
+
+#access-code:focus {
+    border-color: rgba(55, 53, 47, 0.7);
+}
+
+#unlock-button {
+    height: 38px;
+    padding: 0 1rem;
+    border: 0;
+    border-radius: 4px;
+    background: rgb(55, 53, 47);
+    color: white;
+    font: inherit;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+#unlock-button:hover {
+    opacity: .88;
+}
+
+#unlock-status {
+    min-height: 1.25em;
+    margin-top: .6rem;
+    font-size: .78rem;
+    letter-spacing: .08em;
+}
+
+#classified-content {
+    display: none;
+}
+
+body.access-granted #classified-content {
+    display: block;
+    animation: classifiedReveal .35s ease both;
+}
+
+body.access-granted .unlock-gate {
+    display: none;
+}
+
+@keyframes classifiedReveal {
+    from { opacity: 0; transform: translateY(4px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+</style>
+
+<style>
+/* ===== Redacted styles ===== */
+
+/* 文件內原有的 ███ 遮蔽：永久保留，即使授權成功也不解除。 */
+.redacted-static {
+    display: inline-block;
+    color: transparent !important;
+    background: rgb(55, 53, 47);
+    border-radius: 1px;
+    line-height: 1.12;
+    padding: 0 0.035em;
+    user-select: none;
+    -webkit-user-select: none;
+    vertical-align: -0.03em;
+}
+
+/* 標題專用遮蔽：授權前遮住真正編號。
+   解鎖時參考示例，以 transform-origin:left + scaleX(1→0)
+   讓黑條的右端往左收回，形成「從右到左消失」的效果。 */
+.redacted-unlock {
+    position: relative;
+    display: inline-block;
+    color: transparent !important;
+    line-height: 1.12;
+    padding: 0 0.035em;
+    user-select: none;
+    -webkit-user-select: none;
+    white-space: nowrap;
+    vertical-align: -0.03em;
+}
+
+.redacted-unlock::after {
+    content: "";
+    position: absolute;
+    inset: 0.06em -0.02em 0.04em -0.02em;
+    background: rgb(55, 53, 47);
+    border-radius: 1px;
+    transform-origin: left center;
+    transform: scaleX(1);
+    opacity: 1;
+    pointer-events: none;
+}
+
+/* 解鎖後先讓真正文字存在於黑條下方；
+   黑條再從右端向左端逐漸縮短，文字因此被依序露出。 */
+body.access-granted .redacted-unlock {
+    color: inherit !important;
+    user-select: text;
+    -webkit-user-select: text;
+}
+
+body.access-granted .redacted-unlock::after {
+    animation: titleUnredact .78s cubic-bezier(.65, 0, .35, 1) forwards;
+}
+
+.redacted-unlock[data-delay="1"]::after {
+    animation-delay: .08s;
+}
+
+.redacted-unlock[data-delay="2"]::after {
+    animation-delay: .18s;
+}
+
+@keyframes titleUnredact {
+    0% {
+        transform: scaleX(1);
+        opacity: 1;
+    }
+    72% {
+        transform: scaleX(.04);
+        opacity: 1;
+    }
+    100% {
+        transform: scaleX(0);
+        opacity: 0;
+    }
+}
+</style>
+
+<style id="notion-embed-overrides">
+/* ===== Notion Embed 專用版 =====
+   目的：減少「頁面裡又嵌了一個頁面」的感覺。
+   保留滾動能力，但把 iframe 內自己的捲軸藏起來。
+*/
+
+html,
+body {
+    margin: 0 !important;
+    padding: 0 !important;
+    width: 100% !important;
+    max-width: none !important;
+    min-height: 0 !important;
+    background: transparent !important;
+}
+
+body {
+    color: rgb(55, 53, 47);
+    overflow-x: hidden;
+    overflow-y: auto;
+    scrollbar-width: none;          /* Firefox */
+    -ms-overflow-style: none;       /* 舊版 Edge / IE */
+}
+
+html {
+    scrollbar-width: none;
+}
+
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+    width: 0 !important;
+    height: 0 !important;
+    display: none !important;
+}
+
+/* Notion 匯出的 article 不再做「獨立網頁」式置中與外邊距。 */
+article.page,
+.page {
+    width: 100% !important;
+    max-width: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+/* 標題稍微收斂，貼近 Notion 原生頁面的視覺比例。 */
+.page-title {
+    margin: 0 0 0.7em !important;
+    font-size: 2.35rem !important;
+    line-height: 1.18 !important;
+}
+
+/* 刪除匯出頁面常見的多餘描述間距。 */
+.page-description {
+    display: none !important;
+}
+
+/* 內容直接貼合 Embed，可由 Notion 本身控制整個區塊寬度。 */
+.page-body {
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+/* 警告上方保留小幅呼吸空間，不造成大片空白。 */
+.page-body > p:first-of-type {
+    margin-top: 0 !important;
+}
+
+/* 解鎖區塊做成較像 Notion 內部區塊，而不是另一個網站的卡片。 */
+.unlock-gate {
+    margin: 1.25rem 0 1.8rem !important;
+    padding: 1rem 1.05rem !important;
+    border: 1px solid rgba(55, 53, 47, 0.12) !important;
+    border-radius: 4px !important;
+    background: rgba(247, 246, 243, 0.72) !important;
+    box-shadow: none !important;
+}
+
+.unlock-gate-title {
+    margin-bottom: 0.25rem !important;
+}
+
+.unlock-gate-note {
+    margin-bottom: 0.7rem !important;
+}
+
+/* 輸入框 / 按鈕採較接近 Notion 的尺寸。 */
+#access-code {
+    height: 36px !important;
+    border-radius: 3px !important;
+    box-shadow: none !important;
+}
+
+#unlock-button {
+    height: 36px !important;
+    border-radius: 3px !important;
+}
+
+/* 解鎖後正文出現時，不增加新的外框或背景。 */
+#classified-content {
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+/* 手機與較窄 Embed。 */
+@media (max-width: 600px) {
+    .page-title {
+        font-size: 1.9rem !important;
+    }
+
+    .unlock-gate {
+        padding: 0.9rem !important;
+    }
+}
+</style>
+</head><body><article id="3d2594ac-f0b8-80ea-b43f-f9cded3f29c9" class="page sans"><header><h1 class="page-title" dir="auto">F-<span class="redacted-unlock" data-delay="1">1841220</span>-<span class="redacted-unlock" data-delay="2">23</span> 報告書</h1><p class="page-description" dir="auto"></p></header><div class="page-body"><p id="3d2594ac-f0b8-8049-b293-ce6d0e6ccd1a" class="" dir="auto">
+</p><p id="3d2594ac-f0b8-8034-beb0-d9d7560e5f38" class="" dir="auto">
+</p><p id="3d2594ac-f0b8-8004-b476-e313f86f1ee2" class="" dir="auto">
+</p><p id="3d2594ac-f0b8-80b8-afb7-de53c68c0959" class="" dir="auto">
+</p><p id="3d2594ac-f0b8-8086-b916-de5a0910819b" class="" dir="auto">
+</p><p id="3d2594ac-f0b8-804d-8f09-f10f26ce54bf" class="" dir="auto">
+</p><p id="3d2594ac-f0b8-808c-a70f-f5a750f778d0" class="" dir="auto">【警告：本報告屬內部機密調查文件，僅限非人聯合軍司令部、特殊人員管理室、情報本部及經正式授權之人員閱覽。未經授權者不得閱覽、抄錄或複製本報告記載之任何內容，違反者將依軍事機密保護法追究責任並進行軍紀處分。】</p>
+<div class="unlock-gate" id="unlock-gate">
+    <p class="unlock-gate-title">RESTRICTED ACCESS</p>
+    <p class="unlock-gate-note">請輸入 6 位數授權碼以閱覽本報告其餘內容。</p>
+    <div class="unlock-row">
+        <input id="access-code"
+               type="password"
+               inputmode="numeric"
+               pattern="[0-9]*"
+               maxlength="6"
+               autocomplete="off"
+               placeholder="••••••"
+               aria-label="授權碼" />
+        <button id="unlock-button" type="button">解鎖</button>
+    </div>
+    <div id="unlock-status" aria-live="polite"></div>
+</div>
+
+<div id="classified-content">
+<p id="3d2594ac-f0b8-80f4-8c8c-c9a85df03713" class="" dir="auto">
+</p><p id="3d2594ac-f0b8-8097-9bfe-fb8faaffbeb0" class="" dir="auto">
+</p><p id="3d2594ac-f0b8-8002-9239-c625605cfc3a" class="" dir="auto">
+</p><p id="3d2594ac-f0b8-80ea-817a-f1565fda1856" class="" dir="auto">
+</p><p id="3d2594ac-f0b8-801a-8772-c28264c3c0c7" class="" dir="auto">
+</p><p id="3d2594ac-f0b8-8092-8f7c-ef108be284cd" class="" dir="auto">
+</p><p id="3d2594ac-f0b8-80c0-8320-ed4038951423" class="" dir="auto">
+</p><p id="3d2594ac-f0b8-8074-9c86-ec0bab08ce58" class="" dir="auto">
+</p><p id="3d2594ac-f0b8-807c-8e23-f56cd00cd66f" class="" dir="auto">
+</p><p id="3d2594ac-f0b8-8056-91a5-dcdf2e729ff7" class="" dir="auto">
+</p><p id="3d2594ac-f0b8-8093-97d5-f8f56ad2c371" class="" dir="auto">
+</p><p id="3d2594ac-f0b8-80f7-9cbc-f455a61762fe" class="" dir="auto">
+</p><hr id="3d2594ac-f0b8-8061-871c-cf7d60b7ee30" dir="auto"/><h1 id="3d2594ac-f0b8-8038-ae42-cb2c3bbf8f10" class="" dir="auto"><strong>一、調查對象基本資料</strong></h1><p id="3d2594ac-f0b8-80e7-8329-d56ab531c5b7" class="" dir="auto">姓名：Alica</p><p id="3d2594ac-f0b8-80ed-a57c-f879819ec721" class="" dir="auto">性別：女</p><p id="3d2594ac-f0b8-800f-93d4-f15cc353c683" class="" dir="auto">出生年月日：<span class="redacted-static" aria-label="已遮蔽內容">███</span> 年 █ 月 <span class="redacted-static" aria-label="已遮蔽內容">██</span> 日</p><p id="3d2594ac-f0b8-804b-8374-e5905b3557f0" class="" dir="auto">種族：垂耳兔族</p><p id="3d2594ac-f0b8-8080-a705-c0c773ef688b" class="" dir="auto">所屬部隊：作戰大隊第一中隊</p><p id="3d2594ac-f0b8-80f7-822e-f0ac740ff96e" class="" dir="auto">特殊體質類別：Fork（未知悉／<del>已知悉</del>）</p><p id="3d2594ac-f0b8-808c-bb0d-e88f591cdea3" class="" dir="auto">
+</p><h1 id="3d2594ac-f0b8-80a8-8644-c5112e2a44c6" class="" dir="auto"><strong>二、調查目的</strong></h1><p id="3d2594ac-f0b8-80b4-8aba-f2b93fb5327d" class="" dir="auto">本報告依特殊人員管理規範第二條所列，旨在釐清調查對象於1<span class="redacted-static" aria-label="已遮蔽內容">██</span>年<span class="redacted-static" aria-label="已遮蔽內容">██</span>月<span class="redacted-static" aria-label="已遮蔽內容">███</span>日至<span class="redacted-static" aria-label="已遮蔽內容">██</span>月<span class="redacted-static" aria-label="已遮蔽內容">███</span>日期間之異常行為，以判斷其是否涉及特殊體質失控導致作戰無關之傷害事件。</p><p id="3d2594ac-f0b8-80d1-8889-eb74108f8322" class="" dir="auto">
+</p><h1 id="3d2594ac-f0b8-8046-b655-cdf9fda03385" class="" dir="auto"><strong>三、異常行為紀錄</strong></h1><p id="3d2594ac-f0b8-80f7-a152-fd61711d808e" class="" dir="auto"><span class="redacted-static" aria-label="已遮蔽內容">██</span>年<span class="redacted-static" aria-label="已遮蔽內容">██</span>月<span class="redacted-static" aria-label="已遮蔽內容">███</span>日至<span class="redacted-static" aria-label="已遮蔽內容">██</span>月<span class="redacted-static" aria-label="已遮蔽內容">███</span>日期間，調查對象曾多次於非指定作戰時間偏離第一中隊之指定巡邏路線，並單獨進入NW-25-3區。<span class="redacted-static" aria-label="已遮蔽內容">██</span>年<span class="redacted-static" aria-label="已遮蔽內容">██</span>月<span class="redacted-static" aria-label="已遮蔽內容">███</span>日，調查對象再次被發現擅自離營，並於下午<span class="redacted-static" aria-label="已遮蔽內容">██</span>點<span class="redacted-static" aria-label="已遮蔽內容">██</span>分歸營。調查對象歸營後並未向上級報告，並於用餐期間多次乾嘔。其後三日，調查對象除清水外，並未進食任何食物，其行為與特殊人員管理規範記載之第三類人士相符。調查對象於<span class="redacted-static" aria-label="已遮蔽內容">██</span>年<span class="redacted-static" aria-label="已遮蔽內容">██</span>月<span class="redacted-static" aria-label="已遮蔽內容">███</span>日恢復進食，至今未發現其他異常行為。</p><p id="3d2594ac-f0b8-80b4-adfc-f569adac3c6d" class="" dir="auto">
+</p><h1 id="3d2594ac-f0b8-8034-8295-fb3cf8095a12" class="" dir="auto"><strong>四、現場勘查結果</strong></h1><p id="3d2594ac-f0b8-8047-a06f-f8a2610ce2b2" class="" dir="auto">情報部第二組於<span class="redacted-static" aria-label="已遮蔽內容">██</span>年<span class="redacted-static" aria-label="已遮蔽內容">██</span>月<span class="redacted-static" aria-label="已遮蔽內容">███</span>日派遣調查人員<span class="redacted-static" aria-label="已遮蔽內容">███</span>前往NW-25-3區，並確認以下痕跡：</p><p id="3d2594ac-f0b8-8043-9dfb-d22197cef013" class="" dir="auto">一、NW-25-3區與NW-26-3區交界處發現兩種鞋印。一號鞋印之大小及步幅皆與調查對象吻合；二號鞋印之大小約為10.7英寸，樣式與人類方游擊隊使用之裝備相符。一號鞋印被發現延伸至NW-26-4區之河流處，其後往營區方向折返。</p><p id="3d2594ac-f0b8-8023-baf0-d8a4835e8760" class="" dir="auto">二、現場發現大量血跡，經試劑確認為人類血液。</p><p id="3d2594ac-f0b8-8085-9f7f-d8f177246f18" class="" dir="auto">三、現場發現非人聯合軍使用之止痛藥物，其批號與作戰大隊第一中隊之配發批號一致。</p><p id="3d2594ac-f0b8-80ea-bc3e-db47dd81a844" class="" dir="auto">四、現場未發現任何拖行痕跡或屍體。</p><p id="3d2594ac-f0b8-80d2-b0fd-f01a9ee38d74" class="" dir="auto">五、現場發現手帕布料一片，布料上可辨認「Saffron」字樣。</p><p id="3d2594ac-f0b8-8064-abc1-d3bb1781bc89" class="" dir="auto">六、現場發現不屬於調查對象的灰銀色長髮數根。</p><p id="3d2594ac-f0b8-80fd-b587-f5727fa6dd0a" class="" dir="auto">基於以上，情報部懷疑調查對象於<span class="redacted-static" aria-label="已遮蔽內容">██</span>年<span class="redacted-static" aria-label="已遮蔽內容">██</span>月<span class="redacted-static" aria-label="已遮蔽內容">███</span>日襲擊一名人類男性，並於其死亡前後對其進行攝食。</p><p id="3d2594ac-f0b8-80ec-a17b-d970aa68c271" class="" dir="auto">
+</p><h1 id="3d2594ac-f0b8-8055-9f60-c5d09c7ba74d" class="" dir="auto"><strong>四、調查對象之身體檢查</strong></h1><p id="3d2594ac-f0b8-8009-97ef-cda5c12aa5b0" class="" dir="auto">特殊人員管理室於<span class="redacted-static" aria-label="已遮蔽內容">██</span>年<span class="redacted-static" aria-label="已遮蔽內容">██</span>月<span class="redacted-static" aria-label="已遮蔽內容">███</span>對調查對象進行定期身體檢查，檢查結果如下：</p><p id="3d2594ac-f0b8-8083-b662-e434f850122c" class="" dir="auto">一、口腔內側有外傷。</p><p id="3d2594ac-f0b8-80b5-bbea-ee9b8ff31b84" class="" dir="auto">二、口腔及咽喉部檢出血液及人體組織混合物。</p><p id="3d2594ac-f0b8-80e2-836d-f5ef542040be" class="" dir="auto">三、胃內容物確認疑似人體組織殘留物。</p><p id="3d2594ac-f0b8-80e8-aad1-f4033c076dff" class="" dir="auto">四、右手指甲縫內檢出人類之血液及眼部組織。</p><p id="3d2594ac-f0b8-8023-a2d7-ffc747a0dc97" class="" dir="auto">五、左手指甲縫內檢出人類之血液。</p><p id="3d2594ac-f0b8-8027-a36b-d04895895baa" class="" dir="auto">六、無法確認味覺是否完全或部分恢復。</p><p id="3d2594ac-f0b8-800f-ab50-d468637c729a" class="" dir="auto">
+</p><h1 id="3d2594ac-f0b8-809a-8ed1-f658d5867881" class="" dir="auto"><strong>五、詢問摘要</strong></h1><p id="3d2594ac-f0b8-806f-bf40-d1d0b118410f" class="" dir="auto">特殊人員管理室於<span class="redacted-static" aria-label="已遮蔽內容">██</span>年<span class="redacted-static" aria-label="已遮蔽內容">██</span>月<span class="redacted-static" aria-label="已遮蔽內容">███</span>對調查對象進行詢問，詢問時長為一小時二十八分。詢問過程中，調查對象存在反應遲緩，答非所問之情形，且無法清晰說明<span class="redacted-static" aria-label="已遮蔽內容">██</span>年<span class="redacted-static" aria-label="已遮蔽內容">██</span>月<span class="redacted-static" aria-label="已遮蔽內容">███</span>日之個人行蹤。經醫療部隊人員判斷，調查對象可能出現特殊體質認知衝突及解離性失憶症狀。本處判斷調查對象無法提供有效證詞，故終止詢問。</p><p id="3d2594ac-f0b8-8052-8480-e3ae64d7d9eb" class="" dir="auto">
+</p><h1 id="3d2594ac-f0b8-80de-bd64-dc3f160b8bcd" class="" dir="auto"><strong>六、其他調查事項</strong></h1><p id="3d2594ac-f0b8-804e-9460-de3e1ee379ab" class="" dir="auto">截至<span class="redacted-static" aria-label="已遮蔽內容">██</span>年<span class="redacted-static" aria-label="已遮蔽內容">██</span>月<span class="redacted-static" aria-label="已遮蔽內容">███</span>為止，與本調查報告相關的情報如下：</p><p id="3d2594ac-f0b8-8080-ad1a-eeab68acefc8" class="" dir="auto">一、根據本報告第四項記載之內容，調查對象之襲擊對象應為敵方游擊隊第三小隊隊長Saffron White。</p><p id="3d2594ac-f0b8-803e-99fb-db30a8a015bc" class="" dir="auto">二、承上，<span class="redacted-static" aria-label="已遮蔽內容">██</span>年<span class="redacted-static" aria-label="已遮蔽內容">██</span>月<span class="redacted-static" aria-label="已遮蔽內容">███</span>起，我方部隊數次與敵方游擊隊第三小隊交戰，惟交戰期間均未觀察到其隊長Saffron White。</p><p id="3d2594ac-f0b8-8093-95a4-eec9382972fe" class="" dir="auto">三、經測試，觀察到調查對象對食物氣味出現微量反應。該變化符合Fork完整攝食Cake後之味覺恢復情形。</p><p id="3d2594ac-f0b8-80ac-8e5a-f4d61a711044" class="" dir="auto">四、經測試，未觀察到調查對象對食物味道出現任何反應。該測試結果疑受調查對象之精神狀況影響，故不予採納，僅供參考。</p><p id="3d2594ac-f0b8-80ab-ba03-fdb662b1b2ff" class="" dir="auto">
+</p><h1 id="3d2594ac-f0b8-807a-b971-e8407f2c2ab0" class="" dir="auto"><strong>七、總結</strong></h1><p id="3d2594ac-f0b8-8084-afdc-c88978fd744c" class="" dir="auto">經比對多項證據，針對調查對象之判斷如下：</p><p id="3d2594ac-f0b8-8021-b489-e3904ac881be" class="" dir="auto">一、本報告調查對象於<span class="redacted-static" aria-label="已遮蔽內容">██</span>年<span class="redacted-static" aria-label="已遮蔽內容">██</span>月<span class="redacted-static" aria-label="已遮蔽內容">███</span>，在NW-25-3區與NW-26-3區交界處襲擊敵游擊隊第三小隊隊長方Saffron White，並於其死亡前後對其進行完整攝食。調查對象於完整攝食後應已恢復味覺，惟味覺恢復測試受其精神狀況影響，未能準確測試調查對象是否已恢復味覺。</p><p id="3d2594ac-f0b8-80d4-baa4-daac30464d25" class="" dir="auto">二、特殊人員管理室將於<span class="redacted-static" aria-label="已遮蔽內容">██</span>年<span class="redacted-static" aria-label="已遮蔽內容">██</span>月<span class="redacted-static" aria-label="已遮蔽內容">███</span>再次對調查對象進行味覺恢復測試，並依特殊人員管理規範限制調查對象單獨接近我方列管之Cake個體。</p><p id="3d2594ac-f0b8-80a4-90a2-ccbf9c385d58" class="" dir="auto">三、鑑於本案性質特殊，且可能對戰後交涉造成負面影響，故本調查報告禁止向未被授權的第三方公開。本報告將進行保密處理，並於戰後進行銷毀。</p><p id="3d2594ac-f0b8-80bb-bc1f-e788b11aabc1" class="" dir="auto">
+</p><p id="3d2594ac-f0b8-800d-a889-c94dcea00f75" class="" dir="auto">
+</p><p id="3d2594ac-f0b8-8030-a652-f62c6f8c5ddb" class="" dir="auto">簽核人：</p><p id="3d2594ac-f0b8-809f-aa8b-f335ae44f28a" class="" dir="auto">特殊體質管理室主任       <span class="redacted-static" aria-label="已遮蔽內容">██████</span> <span class="redacted-static" aria-label="已遮蔽內容">████</span></p><p id="3d2594ac-f0b8-8028-9a70-f303cc1d8d64" class="" dir="auto">情報本部部長                  <span class="redacted-static" aria-label="已遮蔽內容">███</span> <span class="redacted-static" aria-label="已遮蔽內容">█████</span></p>
+</div>
+</div></article><span class="sans" style="font-size:14px;padding-top:2em"></span>
+<script>
+(function () {
+    // 修改這裡即可更換 6 位數授權碼
+    const CORRECT_CODE = "188732";
+
+    const input = document.getElementById("access-code");
+    const button = document.getElementById("unlock-button");
+    const status = document.getElementById("unlock-status");
+
+    function verifyCode() {
+        if (input.value === CORRECT_CODE) {
+            document.body.classList.add("access-granted");
+            status.textContent = "";
+        } else {
+            status.textContent = "ACCESS DENIED";
+            input.value = "";
+            input.focus();
+        }
+    }
+
+    input.addEventListener("input", function () {
+        this.value = this.value.replace(/\D/g, "");
+    });
+
+    input.addEventListener("keydown", function (event) {
+        if (event.key === "Enter") verifyCode();
+    });
+
+    button.addEventListener("click", verifyCode);
+})();
+</script>
+</body></html>
